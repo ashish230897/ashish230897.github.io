@@ -1,0 +1,42 @@
+---
+layout: page
+title: Deep NeuralNetworks From Scratch
+subtitle: Say bye to Tensorflow/Pytorch/Keras etc for sometime.
+description: Coding a Deep Neural Network.
+background: '/img/posts/dnnet.jpg'
+form: true
+---
+
+<p>There are often times where we have lots and lots of data with lots and lots of parameters/features involved. In such cases it becomes very difficult for a Machine Learning algorithm to interpret the underlying data distribution or in other words tasks like classification and regression becomes difficult to perform. But there are some models which improve their accuracy with more data and more parameters(speaking loosely). And yes one such class of models are <b>Deep Neural Networks</b>.
+As the name implies, Deep Neural Networks consists of many layers and parameters compared to other machine learning algorithms making them more effective with certain tradeoffs. Their effectiveness is however both task and architecture dependent.</p>
+
+
+<p>Automation is the new trend! There are so many libraries, frameworks built around a particular task that one hardly needs to worry about the underlying structure. While this may be beneficial for many tasks where one cannot afford writing every single line of code, it isn't always the case in DeepLearning. When entering the field of deeplearning one can experiment and play around with different models using high level frameworks like <b>Tensorflow, Pytorch, Keras</b> to name a few. Although these frameworks are highly efficient and effective, they tend to take us away from the underlying architecture. To get a deeper understanding of the way the neural network cycle works , <b>a beginner can always code the neural network without using any of the frameworks!!</b> Yes you read it right, it can be done using only numpy.</p>
+
+
+<p>
+<h3>Training the Model</h3>
+Any neural network follows the following pattern while training the model:</p>
+<ul>
+	<li>Load the data</li>
+	<li>Initialize parameters</li>
+	<li>Forward Propagation</li>
+	<li>Compute Cost</li>
+	<li>Backward Propagation</li>
+	<li>Update Parameters</li>
+</ul>
+
+<p>This method of training a neural network using numpy solely isn't obviously the most efficient one and it is the most inefficient way of deploying a deep learning model.
+<b>BUT while implementing your first model in this way, you will be familiarized with every minute step that has to be taken care of while dealing with deeplearning models!</b></p>
+
+<p>I have trained two models without using any frameworks:</p>
+<ul>
+	<li>A Deep Neural Network trained on about 1000 images of dogs and cats for image classification task. It is just a demonstration of how a hand made deep learning model can be trained on a dataset. The best practices involved in training a good model is not followed as it is not the purpose of this repository.</li>
+	<li>A Deep Recurrent Neural Network trained on the names of dinosaurs dataset. Given the first few characters of the name, the network learns to predict the name of the dinosaur.</li> 
+</ul>
+
+<h3>Github Repositories</h3>
+<ol>
+	<li><a href="https://github.com/ashish230897/Deep-Neural-Networks-From-Scratch">Deep Neural Networks from Scratch</a></li>
+	<li><a href="https://github.com/ashish230897/RNN-from-Stratch">Recurrent Neural Network From Scratch</a></li>
+</ol>
