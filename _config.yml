@@ -1,16 +1,16 @@
-title:             Clean Blog
-email:             your-email@example.com
-description:       A Blog Theme by Start Bootstrap
-author:            Start Bootstrap
+title:             Ashish Agrawal
+email:             ashish.agrawal2123@gmail.com
+description:       A Problem Solver with some hunger for innovation :)
+author:            Ashish Agrawal
 #baseurl:           "/startbootstrap-clean-blog-jekyll"
 baseurl:           ""
 #url:               "http://blackrockdigital.github.io"
 url:               "http://ashish230897.github.io"
 
 # Social Profiles
-twitter_username:  SBootstrap
-github_username:   BlackrockDigital
-facebook_username: StartBootstrap
+twitter_username:  AshishSunilAgr1
+github_username:   ashish230897
+facebook_username: 
 
 # Build settings
 markdown:          kramdown
