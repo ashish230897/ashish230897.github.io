@@ -1,0 +1,86 @@
+---
+layout: page
+title: NVIDIA Developer Challenge
+subtitle: Smarter Office Automation System
+description: Using AI for the good.
+background: '/img/posts/jetsontx2.jpg'
+form: true
+---
+
+<h2>Introduction</h2>
+<p>The purpose of our project is to use the power of Deep Learning and
+Artificial Intelligence to solve the problem of <b><u>Electricity Wastage</u></b> and
+provide an efficient way of saving Electricity in offices. As
+the whole project is build around saving electricity in offices, we have
+also developed few other Deep Learning models to increase the
+productivity and security in offices which has lead us to build a
+complete <b><u>Office Automation System</u></b>. These all things were possible
+because of the great implementation of <i><u>“AI on the Edge” on Nvidia
+jetson TX2 Board.</u></i></p>
+
+<h2>Use Of Jetson TX2</h2>
+<p>Most of the Algorithms that we have used in our product are Deep Convolutional Neural Network. DCNNs are 15 to 20 layers Neural Nets with layers like Convolution, Relu, Max Pooling etc. All these layers requires lots of computation power, also the time and deployment of such a model on a embedded platform is much difficult. Moreover our application works on taking <i><u>live frames from camera</u></i> which makes it even more difficult to deploy CNN on continuous frames. But due to the combined power of <i><u>CUDA ,Cudnn library ,Pascal cores and Video Analytics capability of Jetson TX2 board</u></i>, deployment of Deep Neural Network takes place with great speed and thus this is the perfect product for our project</p>
+
+<h2>Technical Aspects</h2>
+<ul>
+	<li><b>Person Tracking Based Office Automation</b>
+		<img src="img/posts/persontracking.jpg" alt="Person tracking">
+		<ol>
+			<li>This Task is meant for detecting the count,position and absence/presence of employees in office rooms. Basically it is a object/person detection task where we have used the <u><i>state of the art YOLO(You only look once) algorithm</i></u> which uses the architecture of Darknet -19.</li>
+			<li>Our Implementation involved taking continuous video frames from a wireless camera, Deploying YOLO using Jetson TX2 board on the continuous frames and getting an
+			updated idea of the number of people located in a room and accordingly control the electrical appliances.</li>
+			<li><i>Node Js</i> is used for server side and <i>Google Firebase</i> is the realtime database for sending information from Jetson Board to the connected Electrical Appliances.</li>
+		</ol>
+	</li>
+
+
+	<li><b>Face recognition Based Automatic Attendance</b>
+		<img src="img/posts/attendance.jpg" alt="attendance system">
+		<ol>
+			<li>For implementing Face recognition we have used <i><u>Facenet model</u></i> which is currently used in many places for facial recognition system. Facenet is a Deep Convolutional Neural network based on the Inception resnet model.</li>
+			<li>A wireless camera is mounted on the office entrance which is turned ON for a specific interval of time which is the bounding limit of office. The frames from the camera are
+			then given as input to Nvidia Jetson TX2 Board. The TX2 Board then recognizes the person and his attendance along with the time is stored in the database.</li>
+			<li>The Attendance is then updated on the <i><u>Office Assistant App</u></i> that we have created for the employee.</li>
+		</ol>
+	</li>
+
+	<li><b>Heatmaps - Crowd Sensing and management</b>
+		<img src="img/posts/heatmap.jpg" alt="Heatmaps">
+		<ol>
+			<li>Heatmaps is a novel approach applied mostly for the first time in office automation space which can be very much useful in case of emergency cases like Firebreak, Terrorist activities etc.</li>
+			<li>Heatmaps are implemented by using a 20 layer deep convolutional neural network whose output is a 2D image with some parts colored darker that specify the presence of a crowd in the room at that specific position. It can provide the count of persons in a room.</li>
+			<li>Heatmaps can also be used by employees for checking if there is crowd present in the canteen or cafes . This could help them save their time and thus increase office productivity. For getting a heatmap the employee just have to send request through his Office Assistant app. <i>The camera meant for heatmap will capture the frame ,send the frame to the Jetson TX2 Board, the Jetson Board will then create and send a 2D heatmap along with the count to the employee's app.</i></li>
+		</ol>
+	</li>
+
+	<li><b>Inventory Management System</b>
+		<img src="img/posts/inventorymanagement.jpg" alt="inventory management">
+		<ol>
+			<li>This method aims at taking a step in the direction of eliminating the practice of <i><u>”Manually Entering”</u></i> data in the database where data can be easily entered in an automated way.</li>
+			<li>Certain companies have equipments and stationary for their employees. The Office needs to keep a track on the equipments to be used in a database along with the employees who use it.</li>
+			<li>We created a Convolutional Neural network for classifying objects in office. So whenever a employee wants to take an equipment he just have to take an image of the equipment, upload the image on the Office assistant app, the image is then classified on the Jetson board and the product name along with employees name is directly stored in the database which is accessible by the manager.</li>
+		</ol>
+	</li>
+
+
+	<li><b>Office Chatbot</b>
+		<ol>
+			<li>It can greet users, handle basic conversational context, tell jokes, and is highly customizable for the needs of any organization to perform a wide range of HR operations seamlessly, and with minimal changes.</li>
+			<li>The managers can check attendance and number of hours clocked-in of any day of any employee by simply typing in the name of the employee, thus saving costs and increasing productivity.</li>
+			<li>Also due to the chat-app interface, alerts are sent to the manager on a regular basis, notifying him of the other important statistics of the day like <i>crowd count, crowd density in different locations, number of employees who clocked in late etc.</i></li>
+			<li>The chatbot presented in this project combines traditional rule-based chatbot models with advanced deep learning models. The deep-learning model used in this project is sequence-to-sequence model which consists of two RNNs - an encoder and a decoder which capture the semantic meaning of the input sentence and emit a decoded response based on its learnings. Also used are rule-based conditionals and NLP algorithms, to seamlessly provide a natural feeling to the conversational flow.</li>
+		</ol>
+	</li>
+
+</ul>
+
+<h2>Technical Challenges</h2>
+<p>
+	Integrating all of the above functionalities <i>together</i> on the Jetson TX2 Board is still a challenge due to numerous reasons. Also the TX2 Board requires the inference to be done in C++ using TensorRT which poses a lot of challenges. Using Tensorflow/Keras directly reduces the speed of the Board and doesn't make use of the board to it's full potential. Limited RAM is also an issue.
+</p>
+
+<p>
+It was a great learning experience to work with Nipun, Rajneesh, Shubham, Swapnil. Implementing <i>AI at the Edge</i> is indeed a challenge and something worth working for :)<br>
+<b>Live Demo : <a href="https://www.youtube.com/watch?v=9EYaO3AIqws">https://www.youtube.com/watch?v=9EYaO3AIqws</a></b><br>
+<b>Github Repository : <a href="https://github.com/ashish230897/Smarter-Office-Automation-System">https://github.com/ashish230897/Smarter-Office-Automation-System</a></b>
+</p>
